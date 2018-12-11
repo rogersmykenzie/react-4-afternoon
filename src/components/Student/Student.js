@@ -8,6 +8,7 @@ export default class Student extends Component {
     this.state = {
       studentInfo: {}
     }
+    
   }
 
   componentDidMount() {
@@ -22,7 +23,7 @@ export default class Student extends Component {
   render() {
     return (
       <div className="box">
-        <Link to={"/classList/" + this.props.match.params.id}><h1>Back</h1></Link>
+        <h1 className='needPointer' onClick={() => this.props.history.goBack()}>Back</h1>
         <h1>Student</h1>
         <h1>{this.state.studentInfo.first_name} {this.state.studentInfo.last_name}</h1>
         <h3>Grade: {this.state.studentInfo.grade}</h3>
